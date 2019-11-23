@@ -4,10 +4,14 @@ function solution(arr) {
         left,
         right;
     const arrLength = arr.length;
+    // define initial left and right side
     left = arr[0];
+    // Sum right side
     right = arr.slice(1,arrLength).reduce((total, num)=> total + num);
+    // calculate difference as absolute value
     minDiff = Math.abs(left - right);
     for(let i = 1; i<arrLength-1; i++){
+        // passing number from right to left
         left += arr[i];
         right -= arr[i];
         diff = Math.abs(left - right);
